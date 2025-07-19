@@ -1,0 +1,143 @@
+---
+title: Installation Guide
+---
+
+## Windows
+
+### Manual Installation
+
+* For 32-bit operating systems, please download *_x86-setup.exeand install it.
+* For 64-bit operating systems, please download *_x64-setup.exeand install it.
+* For ARM64 architecture, please download *_arm64-setup.exeand install it.
+
+---
+
+## MacOS
+
+### Manual Installation
+
+* For Apple Silicon chips, please download *_aarch64.dmgand install.
+* For Intel chips, please download *_x64.dmgand install it.
+
+### Error message
+
+If you encounter the following error message:
+
+* Chessifier.app is corrupted and cannot be opened.
+* Apple could not verify “Chessifier” is free of malware that may harm your Mac or compromise your privacy.
+
+### Cause of error
+
+Since the application needs an official signature to avoid the pop-up "app is damaged" prompt after installation, but the official signature fee is expensive ($99 per year), which is unaffordable for open source projects. Therefore, it is necessary to manually bypass the signature to use Chessifier normally.
+
+### Solution
+
+1. On your Mac, choose Apple menu  > System Settings, then click Privacy & Security  in the sidebar. (You may need to scroll down.)
+
+2. Go to Security, then click Open.
+
+3. Click Open Anyway.
+
+    This button is available for about an hour after you try to open the app.
+
+4. Enter your login password, then click OK.
+
+---
+
+## Linux
+
+> Only supports use in X11 environment
+
+### Ubuntu, Debain series
+
+1. Installation
+
+    Go to [Download page](##ahttps://github.com/Chessifier/chessifier/releases) to download the `deb` file, and then execute the following command:
+
+    ```bash
+    # Install dependencies
+    sudo apt update
+    sudo apt install libwebkit2gtk-4.0-dev libgtk-3-dev
+
+    sudo dpkg -i chessifier.deb
+    ```
+
+2. Update
+
+    Go to [Download Page](##ahttps://github.com/Chessifier/chessifier/releases) to download the latest `deb` file
+
+    ```bash
+    sudo dpkg -i chessifier.deb
+    ```
+
+3. Uninstall
+
+    ```bash
+    sudo apt-get purge chessifier
+    ```
+
+### ArchLinux, Manjaro series
+
+1. Install
+
+    ```bash
+    yay -S chessifier-bin
+    ```
+
+2. Update
+
+    ```bash
+    yay -Syyu
+    ```
+
+3. Uninstall
+
+    ```bash
+    sudo pacman -Rcns chessifier-bin
+    ```
+
+### Red Hat, CentOS, Fedora series
+
+Go to [Download Page](##ahttps://github.com/Chessifier/chessifier/releases) to download `rpm` file, then execute the following command:
+
+1. Installation
+
+    ```bash
+    # Install dependencies
+    sudo dnf check-update
+    sudo dnf install webkit2gtk4.0-devel libappindicator-gtk3-devel
+
+    rpm -ivh chessifier.rpm
+    ```
+
+2. Update
+
+    Go to [Download Page](##ahttps://github.com/Chessifier/chessifier/releases) to download the new version of `rpm` file
+
+    ```bash
+    rpm -Uvh chessifier.rpm
+    ```
+
+3. Uninstall
+
+    ```bash
+    rpm -ev chessifier
+    ```
+
+### Other distributions
+
+1. Installation
+
+    Go to [Download Page](##ahttps://github.com/Chessifier/chessifier/releases) to download the `Appimage` file, then execute the following command:
+
+    ```bash
+    chmod +x chessifier.AppImage
+    ./chessifier.AppImage
+    ```
+
+2. Uninstall
+
+    ```bash
+    rm -r /opt/chessifier
+    rm /usr/share/applications/Chessifier.desktop
+    ```
